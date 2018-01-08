@@ -5,7 +5,8 @@
 	<div class="container-fluid">
 		<div class="row">
 			<header id="header" class="col-lg-10 offset-3">
-				<h1>Les actus de votre région</h1>
+				
+				<h1>WESH LES GUEUX</h1>
 			</header>	
 		</div>
 	</div>
