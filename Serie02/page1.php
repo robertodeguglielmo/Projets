@@ -6,7 +6,7 @@
 		<div class="row">
 			<header id="header" class="col-lg-10 offset-3">
 				
-				<h1>WESH LES GUEUX</h1>
+				<h1>Actu!</h1>
 			</header>	
 		</div>
 	</div>
