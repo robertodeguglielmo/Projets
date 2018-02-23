@@ -1,83 +1,101 @@
 <?php 
 
 class form{
-	private this->monForm = '';
+	private $monForm = '';
 
-	public function __construct($name,$method,$action,$onsubmit,$legend){
-		this->monForm='<form name="'.$name.'" method="'.$method.'" action="'.$action.'" onsubmit="'.$onsubmit.'">';
-		this->monForm.='<fieldset><legend>'.$legend.'</legend>';
+	public function __construct($pName,$pMethod,$pAction,$pOnsubmit='',$pLegend=''){
+		$this->monForm='<form name="'.$pName.'" method="'.$pMethod.'" action="'.$pAction.'" onsubmit="'.$pOnsubmit.'">';
+		$this->monForm.='<fieldset><legend>'.$pLegend.'</legend>';
 	}
 
 	public function getForm(){
-		this->endForm();
-		return this->monForm;
+		$this->endForm();
+		return $this->monForm;
 	}
 
 //Fonction qui permet d'ajouter une zone de texte
-	public function setText($label,$name,$id,$param)
+	public function setEmail($pLabel,$pName,$pId,$pParam='',$pRequired=false , $pPlaceholder='' , $pValue='')
 	{	
 		
-		this->monForm.='<label for="'.$id.'">'.$label.' </label>';
-		this->monForm.='<input type="text" name="'.$name.'" id="'.$id.'"/><br/>';
-		this->monForm.='<br/>';
+		$this->monForm.='<label for="'.$pId.'">'.$pLabel.' </label>';
+		$this->monForm.='<input type="email" name="'.$pName.'" id="'.$pId.'" '.$this->getRequired($pRequired).' placeholder="'.$pPlaceholder.'" value = "'.$pValue.'"/><br/>';
+		$this->monForm.='<br/>';
+		
+	}
+
+	private function getRequired($pRequired){
+		if($pRequired==true){
+			return 'required';
+		}
+		else{
+			return '';
+		}
+	}
+
+	public function setText($pLabel,$pName,$pId,$pParam='',$pRequired=false , $pPlaceholder='' , $pValue='')
+	{	
+		
+		$this->monForm.='<label for="'.$pId.'">'.$pLabel.' </label>';
+		$this->monForm.='<input type="text" name="'.$pName.'" id="'.$pId.'" '.$this->getRequired($pRequired).' placeholder="'.$pPlaceholder.'" value = "'.$pValue.'"/><br/>';
+		$this->monForm.='<br/>';
 		
 	}
 	
 //Fonction supplémentaire qui permet d'ajouter du texte
-	public function setText2($label,$param)
+	public function setText2($pLabel,$pParam)
 	{	
 		
-		this->monForm.= $label;
-		this->monForm.='<br/>';
+		$this->monForm.= $pLabel;
+		$this->monForm.='<br/>';
 		
 	}
 	
 //Fonction qui permet d'ajouter un bouton radio
-	public function setRadio($label,$name,$id,$param)
+	public function setRadio($pLabel,$pName,$pId,$pParam)
 	{
 		
-		this->monForm.='<input type="radio" name="'.$name.'" value="'.$id.'" id="'.$id.'"/>';
-		this->monForm.='<label for="'.$id.'">'.$label.' </label><br/>';
+		$this->monForm.='<input type="radio" name="'.$pName.'" value="'.$pId.'" id="'.$pId.'"/>';
+		$this->monForm.='<label for="'.$pId.'">'.$pLabel.' </label><br/>';
 		
 	}
 
 //Fonction qui permet d'ajouter une case a cocher
-	public function setCheckbox($label,$name,$param)
+	public function setCheckbox($pLabel,$pName,$pParam)
 	{
 		
-		this->monForm.='<input type="checkbox" name="'.$name.'" value="'.$name.'" id="'.$name.'" />';
-		this->monForm.='<label for="'.$name.'">'.$label.'</label><br/>';
+		$this->monForm.='<input type="checkbox" name="'.$pName.'" value="'.$pName.'" id="'.$pName.'" />';
+		$this->monForm.='<label for="'.$pName.'">'.$pLabel.'</label><br/>';
 			
 	}
 	
 //Fonction qui permet d'ajouter un bouton d'envoi
-	public function setSubmit($name,$value,$param)
+	public function setSubmit($pName,$pValue,$pParam=null)
 	{
 		
-		this->monForm.='<br/><input type="submit" name="'.$name.'" value="'.$value.'"/>';
+		$this->monForm.='<br/><input type="submit" name="'.$pName.'" value="'.$pValue.'"/>';
 		
 	}
 
 //Fonction qui permet d'ajouter un bouton reset
-	public function setReset($name,$value,$param)
+	public function setReset($pName,$pValue,$pParam)
 	{
 		
-		this->monForm.='  <input type="reset" name="'.$name.'" value="'.$value.'"/>';
+		$this->monForm.='  <input type="reset" name="'.$pName.'" value="'.$pValue.'"/>';
 		
 	}
 	
 //Fonction qui permet d'ajouter un bouton simple
-	public function setButton($name,$value,$retour,$param)
+	public function setButton($pName,$pValue,$pRetour,$pParam)
 	{
 		
-		this->monForm.=' <input type="button" name="'.$name.'" value="'.$value.'" onclick="'.$retour.'" />';
+		$this->monForm.=' <input type="button" name="'.$pName.'" value="'.$pValue.'" onclick="'.$pRetour.'" />';
 		
 	}
 
 //Fonction qui permet de fermer le formulaire
-	public function endForm()
+	private function endForm()
 	{
-		this->monForm.='</fieldset></form>';
+		$this->monForm.='</fieldset></form>';
 		
 	}
 

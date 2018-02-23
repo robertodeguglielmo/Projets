@@ -17,15 +17,18 @@ require 'haut.php' ;
 		<section class="col-lg-10">
 			<div class="row">					
 				<article class="col-sm-9">
+
+
 					<h2>Que le combat commence !</h2>
 					
 					<?php 
 						$perso1= new Personnage(50,5); 
-						$perso2= new Personnage(100,23); 
+						$perso2= new Pesronnage(100,23); 
 						$perso1->frapper($perso2); 
 						$perso1->gagnerExperience(); 
 						$perso2->frapper($perso1); 
 						$perso2->gagnerExperience(); 
+						
 
 
 						echo 'Le personnage 1 a ', $perso1->getforce(), ' de force, contrairement au personnage 2 qui a ', $perso2->getforce(), ' de force.<br />';
@@ -37,6 +40,23 @@ require 'haut.php' ;
 					?>
 
 				</article>
+
+				<article class="col-sm-3">
+
+					
+					<h2>Test de formulaire</h2>
+					
+					<?php 
+						$monFormulaire = new Form('Formulaire','post','http://dero-promsocatc.alwaysdata.net/index.php');
+						$monFormulaire->setText('NOM :','NOM','NOM','',true,'Entrez ici votre nom');
+						$monFormulaire->setEmail('Email :','EMAIL','EMAIL','',true,'nom.prenom@fournisseur.be');
+						$monFormulaire->setSubmit('VALIDER','Valider');
+						echo $monFormulaire->getForm();
+
+					?>
+
+				</article>
+
 
 			</div>
 		</section>

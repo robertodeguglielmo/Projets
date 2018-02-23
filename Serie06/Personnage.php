@@ -48,7 +48,7 @@ class Personnage
 		$this->_degats = $degats;
 	}
 
-	public function affaiblit($degats){
+	public function augmenterDegats($degats){
 		if (!is_int($degats))
 		{
 			trigger_error('Le niveau de dégâts d\'un personnage doit être un nombre entier', E_USER_WARNING);
@@ -59,7 +59,7 @@ class Personnage
 	}
 
 	public function frapper($persoAFrapper){
-		$persoAFrapper->affaiblit($this->_force);
+		$persoAFrapper->augmenterDegats($this->_force);
 	}
 
 

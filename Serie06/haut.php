@@ -1,6 +1,7 @@
 <?php 
 session_start(); 
 require_once 'Personnage.php';
+require_once 'Form.php';
 ?>
 <!DOCTYPE html>
 <html>
