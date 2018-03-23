@@ -18,6 +18,8 @@
 	$monFormulaire->setEmail('Email :','EMAIL','EMAIL','',true,'nom.prenom@fournisseur.be');
 	$monFormulaire->setSubmit('VALIDER','Valider');
 
+	
+
 	require '../vue/page4.php' 
 ?>
 

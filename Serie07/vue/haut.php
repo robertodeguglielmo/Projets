@@ -20,6 +20,7 @@
 				<li><a href="Page2.php">Foot</a></li>
 				<li><a href="Page3.php">Formulaire</a></li>
 				<li><a href="Page4.php">Combat</a></li>
+				<li><a href="Page5.php">table test</a></li>
 			</ul>
 		</div>
 	</nav>
