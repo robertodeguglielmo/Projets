@@ -1,0 +1,28 @@
+body{
+	font-family: Arial,Helvetica,sans-serif;
+}
+
+aside, footer, section{
+ 	border: 1px solid #d4d4d4;
+	border-radius: 5px;
+	margin-top: 10px;
+ }
+
+footer{
+    text-align: center; 
+    padding: 10px; 
+    font-size: 70%; 
+    line-height: 14px;
+}
+
+h2{
+	color:rgb(255,255,255);
+	text-align: center;
+	background-color: rgb(34, 116, 172);
+}
+.visible {
+  visibility: visible;
+}
+.invisible {
+  visibility: hidden;
+}
