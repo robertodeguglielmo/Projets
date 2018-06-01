@@ -8,5 +8,23 @@
 		</div>
 		
 	</div>
+	
+	
+
+	
+	
+	<script src="../vue/js/utilisateurs.js"></script>
+	<script>
+			/*$(function(){
+		        $.post("page5.php" , function(data, status){
+		        	alert("Data: "+ data + "\nStatus: " + status );
+		    	});
+
+
+
+
+		    });*/
+
+	</script>
 </body>
 </html>

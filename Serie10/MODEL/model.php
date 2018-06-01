@@ -4,6 +4,7 @@ class Model{
 	protected $connection;
 	Public $id ;
 	Public $data ;
+	Public $dump_sql ;
 	
 	function __construct() {
 		
@@ -45,7 +46,10 @@ class Model{
 		
 		try {
 		  // On envois la requète
-			//echo $sql;
+			if($this->dump_sql==true){
+				echo $sql;
+			}
+		  
 		  $select = $this->connection->query($sql);
 		 
 		  // On indique que nous utiliserons les résultats en tant qu'objet
@@ -65,8 +69,4 @@ class Model{
 	
 
 }
-
-
-
 ?>
-

@@ -75,6 +75,13 @@ class form{
 		$this->monForm.='<label for="'.$pName.'">'.$pLabel.'</label><br/>';
 			
 	}
+
+	public function addHidden($pName,$pId,$pValue='')
+	{	
+		
+		$this->monForm.='<input type="hidden" name="'.$pName.'" id="'.$pId.'"  value = "'.$pValue.'"/><br/>';
+	}
+
 	
 //Fonction qui permet d'ajouter un bouton d'envoi
 	public function addSubmit($pName,$pValue,$pParam=null)
