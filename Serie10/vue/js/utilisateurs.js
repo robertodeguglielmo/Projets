@@ -21,7 +21,7 @@ var  clicKeyUp = function(){
 
 	$.post( $destination, { PRENOM : elem.val()} )
 	.done(function( data ) {
-		$('#utilisateurs').replaceWtih(data);
+		$('#utilisateurs').replaceWith(data);
 	}
 	);
 };
@@ -54,14 +54,17 @@ var  clicModif = function(){
 			event.preventDefault();
 			$.post('utilisateurs_fic.php',$(this).serialize()).done(function(data) {});
 			$("#myModal").modal('toggle');
-			$("form #PRENOM").trigger("keyup");
+			$("form #PRENOM").trigger('keyup');
 
 		});
 	});
 };
 
+
 $(function(){
-	$('#utilisateurs #actif'	).each(function(){$(this).on('click',clicActive);});
-	$('#utilisateurs #modifier'	).each(function(){$(this).on('click',clicModif);});
-	$("form #PRENOM").on( "keyup",clicKeyUp);
+	$(document).on('click','#utilisateurs #actif',clicActive);
+	$(document).on('click','#utilisateurs #modifier',clicModif);
+	$(document).on('change','form #PRENOM',clicKeyUp);
+	$(document).on('keyup','form #PRENOM',clicKeyUp);
 });
+
