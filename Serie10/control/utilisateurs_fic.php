@@ -29,7 +29,6 @@ if(isset($_POST['MODE'])){
 			$Utilisateurs->utilisateur_create($_POST['UTILISATEUR'],$_POST['CODE'],$_POST['NOM'],$_POST['PRENOM'],$VarAdministrateur,$VarActif);
 			break;
 		case 'U':
-		var_dump($_POST);
 			$Utilisateurs->utilisateur_update($_POST['UTILISATEUR'],$_POST['CODE'],$_POST['NOM'],$_POST['PRENOM'],$VarAdministrateur,$VarActif);
 		default:
 			break;
@@ -61,6 +60,6 @@ $monFormulaire->addText('Prénom :','PRENOM','PRENOM','',false,'Entrez ici votre
 $monFormulaire->addText('Nom :','NOM','NOM','',false,'Entrez ici votre nom',$VarNom);
 $monFormulaire->addCheckbox('Administrateur :','ADMINISTRATEUR','ADMINISTRATEUR',$VarAdministrateur);
 $monFormulaire->addCheckbox('Actif :','ACTIF','ACTIF',$VarActif);
-/*$monFormulaire->addSubmit('VALIDER','Valider');*/
+$monFormulaire->addSubmit('VALIDER','Valider');
 echo $monFormulaire->getForm();
 ?>

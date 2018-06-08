@@ -15,10 +15,13 @@ if (isset($_POST['PRENOM'])){
 	$where.=" upper(prenom)  like upper('%".$VarPrenom."%' )";
 }
 
-$monFormulaire = new Form('Formulaire','post','?');
-$monFormulaire->addText('Prénom :','PRENOM','PRENOM',$VarPrenom,false,'Entrez ici le prénom recherché');
-/*$monFormulaire->addSubmit('VALIDER','Valider');*/
-echo $monFormulaire->getForm();
+if(Control_util::isAjax()){
+	$monFormulaire = new Form('FormUtilisateur_tab','post','?');
+	$monFormulaire->addText('Prénom :','PRENOM','PRENOM',$VarPrenom,false,'Entrez ici le prénom recherché');
+	/*$monFormulaire->addSubmit('VALIDER','Valider');*/
+	echo $monFormulaire->getForm();
+
+}
 
 $Utilisateurs=Model::load("utilisateurs");
 $Utilisateurs->read(null,$where);
